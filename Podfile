@@ -26,3 +26,7 @@ target :Integration do
 	pod 'OHHTTPStubs'
     pod 'KIF', :head
 end
+
+post_install do
+	`patch -p0 < Diffs/*.diff`
+end
